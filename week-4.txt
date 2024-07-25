@@ -59,4 +59,9 @@ Step - 3 :
         localhost:3000/location
         localhost:3000/location/review/new
         localhost:3000/about
+
+step - 4 :
+
+       Final code for the layout framework in app_server/views/layout.pug
+       copy paste from textbook
         
