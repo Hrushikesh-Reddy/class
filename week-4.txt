@@ -1,0 +1,62 @@
+
+step - 1: 
+
+1) Requiring the controller files in app_server/routes/index.js
+        const ctrlLocations = require('../controllers/locations');
+        const ctrlOthers = require('../controllers/others');
+
+2) Defining the routes and mapping them to controllers in app_server/routes/index.js
+
+        /* Locations pages */
+router.get('/', ctrlLocations.homelist);
+router.get('/location', ctrlLocations.locationInfo);
+router.get('/location/review/new', ctrlLocations.addReview);
+/* Other pages */
+router.get('/about', ctrlOthers.about);
+
+Step - 2 :
+
+1) create 'others.js' controller file in app_server/controllers/
+
+        copy-paste :
+
+        /* GET 'about' page */
+        const about = (req, res) => {
+        res.render('index', { title: 'About' });
+        };
+        module.exports = {
+        about
+        };
+
+2) create 'locations.js' controller file in app_server/controllers/
+
+        copy-paste:
+        /* GET 'home' page */
+        const homelist = (req, res) => {
+        res.render('index', { title: 'Home' });
+        };
+        /* GET 'Location info' page */
+        const locationInfo = (req, res) => {
+        res.render('index', { title: 'Location info' });
+        };
+        /* GET 'Add review' page */
+        const addReview = (req, res) => {
+        res.render('index', { title: 'Add review' });
+        };
+
+        module.exports = {
+        homelist,
+        locationInfo,
+        addReview
+        };
+
+
+Step - 3 : 
+
+        goto these routes and verify the pages:
+
+        localhost:3000/
+        localhost:3000/location
+        localhost:3000/location/review/new
+        localhost:3000/about
+        
